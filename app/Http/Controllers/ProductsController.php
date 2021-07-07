@@ -45,4 +45,14 @@ class ProductsController extends Controller
             }
         }
     }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return response()->json([
+            'message' => 'Detail of product',
+            'data' => $product
+        ], 200);
+    }
 }

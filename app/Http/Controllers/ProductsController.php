@@ -10,7 +10,7 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        $product = Product::orderBy('id', 'asc')->get();
+        $product = Product::orderBy('id', 'desc')->get();
         return response()->json([
             'message' => 'view all product',
             'data' => $product

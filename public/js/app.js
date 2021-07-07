@@ -1931,7 +1931,91 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      p: {},
+      validation: []
+    };
+  },
+  methods: {
+    ProductStore: function ProductStore() {
+      var _this = this;
+
+      var uri = "http://localhost:8000/api/product";
+      this.axios.post(uri, this.p).then(function () {
+        _this.$router.push({
+          path: "/"
+        });
+      })["catch"](function (error) {
+        _this.validation = error.data.data;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -19746,15 +19830,192 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container mt-3" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col md-12" }, [
+        _c("div", { staticClass: "card card-default" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("CREATE PRODUCT")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-6" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.ProductStore.apply(null, arguments)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Product Name")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.p.product_name,
+                            expression: "p.product_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Input product name"
+                        },
+                        domProps: { value: _vm.p.product_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.p, "product_name", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.validation.product_name
+                        ? _c("div", [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "alert alert-danger mt-1",
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(_vm.validation.product_name[0]) +
+                                    "\n                    "
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Stock")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.p.stock,
+                            expression: "p.stock"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", placeholder: "Input stock" },
+                        domProps: { value: _vm.p.stock },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.p, "stock", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.validation.stock
+                        ? _c("div", [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "alert alert-danger mt-1",
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(_vm.validation.stock[0]) +
+                                    "\n                    "
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Price")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.p.price,
+                            expression: "p.price"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", placeholder: "Input price" },
+                        domProps: { value: _vm.p.price },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.p, "price", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.validation.price
+                        ? _c("div", [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "alert alert-danger mt-1",
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(_vm.validation.price[0]) +
+                                    "\n                    "
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Hello")])
+    return _c("div", { staticClass: "form-group" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-success", attrs: { type: "submit" } },
+        [_vm._v("SAVE")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-danger", attrs: { type: "reset" } },
+        [_vm._v("RESET")]
+      )
     ])
   }
 ]

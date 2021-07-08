@@ -20,7 +20,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="p in products" :key="p.id">
+                  <tr v-for="(p, index) in products" :key="p.id">
                     <td>{{ p.product_name }}</td>
                     <td>{{ p.stock }}</td>
                     <td>{{ p.price }}</td>
@@ -30,7 +30,7 @@
                         class="btn btn-sm btn-primary"
                         >Edit</router-link>
                       <button
-                        @click.prevent="ProductDelete(p.id)"
+                        @click.prevent="ProductDelete(p.id, index)"
                         class="btn btn-sm btn-danger"
                       >
                         Delete
@@ -60,6 +60,18 @@ export default {
       this.products = response.data.data;
     });
   },
+  methods:{
+    ProductDelete(id, index){
+      this.axios.delete(`http://localhost:8000/api/product/${id}`)
+      .then(response =>{
+          
+          this.$delete(this.products,index);
+          
+      }).catch(error=>{
+        alert('system error!');
+      });
+    }
+  }
 };
 </script>
 

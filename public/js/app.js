@@ -2201,6 +2201,17 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get(uri).then(function (response) {
       _this.products = response.data.data;
     });
+  },
+  methods: {
+    ProductDelete: function ProductDelete(id, index) {
+      var _this2 = this;
+
+      this.axios["delete"]("http://localhost:8000/api/product/".concat(id)).then(function (response) {
+        _this2.$delete(_this2.products, index);
+      })["catch"](function (error) {
+        alert('system error!');
+      });
+    }
   }
 });
 
@@ -20381,7 +20392,7 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "tbody",
-                      _vm._l(_vm.products, function(p) {
+                      _vm._l(_vm.products, function(p, index) {
                         return _c("tr", { key: p.id }, [
                           _c("td", [_vm._v(_vm._s(p.product_name))]),
                           _vm._v(" "),
@@ -20411,7 +20422,7 @@ var render = function() {
                                   on: {
                                     click: function($event) {
                                       $event.preventDefault()
-                                      return _vm.ProductDelete(p.id)
+                                      return _vm.ProductDelete(p.id, index)
                                     }
                                   }
                                 },

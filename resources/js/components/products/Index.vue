@@ -13,10 +13,10 @@
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
-                    <td>Product Name</td>
-                    <td>Stock</td>
-                    <td>Price</td>
-                    <td>Action</td>
+                    <th>Product Name</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -28,8 +28,7 @@
                       <router-link
                         :to="{ name: 'edit', params: { id: p.id } }"
                         class="btn btn-sm btn-primary"
-                        >Edit</router-link
-                      >
+                        >Edit</router-link>
                       <button
                         @click.prevent="ProductDelete(p.id)"
                         class="btn btn-sm btn-danger"
